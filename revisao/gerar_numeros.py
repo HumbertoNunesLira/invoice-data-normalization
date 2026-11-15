@@ -21,6 +21,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+_sys = __import__('sys'); _sys.path.insert(0, str(Path(__file__).resolve().parent))
+from pave_dataset import categoria_real  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[1]
 DADOS = REPO / "main_supersaurus" / "dados"
@@ -176,7 +178,7 @@ def tabela_cobertura(pave_dir: str) -> list[dict]:
         ns = sum(1 for c in gold if _mapeia(c))
         nl = sum(1 for c in gold if _mapeia(c, frouxo=True))
         linhas.append(dict(
-            categoria=cat, n_itens=len(df), n_slots_gold=len(gold),
+            categoria=categoria_real(cat), n_itens=len(df), n_slots_gold=len(gold),
             n_mapeados_estrito=ns, n_mapeados_frouxo=nl, n_nao_mapeados=len(gold) - ns,
             tem_product_type="product_type" in cols,
             gold_sem_correspondente=";".join(c for c in gold if not _mapeia(c)),

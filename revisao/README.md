@@ -9,11 +9,12 @@ Regenerar tudo: `python revisao/gerar_numeros.py --pave-dir <Dataset_in_CSVs>`
 | Arquivo | Conteúdo | Seção |
 |---|---|---|
 | `T1_naocomparabilidade_aipavebr.csv` | 13 dimensões de comparação AI-PAVE-Br × TAIL | 2.1 |
-| `T2_cobertura_schema_aipavebr.csv` | Cobertura de schema por categoria (22 linhas) | 2.1 |
+| `T2_cobertura_schema_aipavebr.csv` | Cobertura de schema por categoria (21 categorias) | 2.1 |
 | `T3_significancia.csv` | Bootstrap pareado + McNemar sobre os 1.200 pares | 4.2, 4.3 |
 | `T4_pave_global.csv` | Os 3 sistemas no Golden Set: 2 escopos × 2 métricas | 2.1 |
 | `T5_pave_por_atributo.csv` | Por atributo gold (21 linhas), com cobertura | 2.1, 4.3 |
-| `T6_pave_por_categoria.csv` | Por categoria (22 linhas) | 2.1 |
+| `T6_pave_por_categoria.csv` | Por categoria (21 categorias) | 2.1 |
+| `T7_numeros_so_na_descricao.csv` | Valores numéricos extraídos que só aparecem na descrição (512 caracteres × completa) | 2.1 |
 
 ---
 
@@ -28,7 +29,17 @@ Seção 3.3, só o título como entrada) sobre os **7.890 itens das 21 categoria
 do Golden Set publicado (a versão do repositório baixada nesta rodada tem uma
 categoria a menos que a original de 8.274/22 — não afeta a comparação, os três
 sistemas rodam sobre o mesmo conjunto), e recomputamos os três sistemas com a
-mesma métrica. Nesta rodada, o pipeline do TAIL já inclui o fix de
+mesma métrica.
+
+**Atenção — nomes de arquivo deslocados na versão baixada.** Cada arquivo traz a
+categoria anterior em ordem alfabética: `Armário.csv` contém ares-condicionados,
+`Bicicleta.csv` contém armários, …, `Tênis.csv` contém TVs (conferido pelos títulos
+e pelos atributos gold). As 21 categorias reais são Ar Condicionado … TV; **a
+ausente é Tênis**. Os rótulos por categoria (`T2`, `T6`) usam o mapa corrigido
+`pave_dataset.CATEGORIA_REAL`; os resultados globais (`T4`) e por atributo (`T5`)
+não dependem do nome do arquivo e não mudam. Conferência: com o mapa, as 21
+categorias batem exatamente (itens, slots, atributos) com um download anterior
+cujos nomes estavam corretos. Nesta rodada, o pipeline do TAIL já inclui o fix de
 `_normalize_quantidade` (colapsa quantidade implícita "1" → null) que não
 estava presente na rodada anterior — impacto pequeno e esperado, já que
 `quantidade` fica fora do escopo "schema alinhado" (ver `NAO_MODELADOS`).
@@ -56,14 +67,25 @@ estava presente na rodada anterior — impacto pequeno e esperado, já que
 
 ### A leitura
 
-**O TAIL agora empata/ultrapassa levemente o baseline da empresa terceira (0,657 vs
-0,652) e fica 2,2 pp atrás do AI-PAVE-Br — usando apenas o título.**
-O Golden Set publicado inclui título e descrição (descrição preenchida em 7.784 dos
-7.890 itens). Em 12,8% dos valores numéricos extraídos pelo AI-PAVE-Br, o número não
-ocorre no título, mas ocorre na descrição, o que indica que a descrição fez parte da
-entrada do sistema deles — os dados não documentam a entrada exata (por exemplo, se
-houve ficha técnica), então não afirmar mais do que isso. O TAIL recebe só o título. E o TAIL
-tem a maior precisão dos três (0,845), com a menor cobertura: extrai menos, erra menos.
+**O TAIL empata estatisticamente com o baseline da empresa terceira (0,657 vs 0,652;
+ΔF1 +0,5 pp, IC 95% [−0,3; +1,3]) e fica 2,2 pp atrás do AI-PAVE-Br (IC 95%
+[−2,8; −1,6]) — usando apenas o título.** (ICs: bootstrap sobre itens,
+`benchmark.ipynb`, Seção 10.5.)
+
+O Golden Set publicado traz título e descrição (descrição preenchida em 7.784 dos
+7.890 itens). **Não sabemos qual foi a entrada do sistema deles** — os dados não a
+documentam (por exemplo, se houve ficha técnica). O que os dados mostram (`T7`,
+`numeros_descricao.py`): dos valores numéricos extraídos pelo AI-PAVE-Br, 32,9% não
+aparecem no título mas aparecem na descrição completa (13,2% se a descrição for
+cortada nos primeiros 512 caracteres, como em `pave/itens.csv`; 6.866 das 7.784
+descrições passam disso). Isso **indica, sem provar**, que a descrição fez parte da
+entrada — o modelo poderia ter inferido alguns valores por conhecimento prévio.
+Não afirmar mais do que isso. O TAIL recebe só o título.
+
+Precisão: a do TAIL (0,845) é **estatisticamente igual** à da empresa terceira
+(0,851; Δ −0,6 pp, IC 95% [−1,4; +0,2]) e 6,7 pp **maior** que a do AI-PAVE-Br
+(IC 95% [+5,9; +7,5]), com cobertura menor (65,1% contra 77,6%): extrai menos, erra
+menos. Não dizer "a maior precisão dos três".
 
 **Importante, e vale declarar como limitação em vez de conclusão:** não temos como
 separar, só com este número, quanto do gap de 2,2 pp é assimetria de informação

@@ -1,0 +1,13 @@
+escopo,fonte,descricao,n_valores_numericos,pct_no_titulo,pct_so_na_descricao,pct_em_nenhum
+todos os atributos gold,AI-PAVE-Br (pred_llm),512 caracteres,18852,61.7,13.2,25.2
+todos os atributos gold,AI-PAVE-Br (pred_llm),completa,18852,61.7,32.9,5.5
+todos os atributos gold,Baseline empresa terceira (pred_ol),512 caracteres,8266,72.6,6.2,21.2
+todos os atributos gold,Baseline empresa terceira (pred_ol),completa,8266,72.6,14.3,13.1
+todos os atributos gold,Gold,512 caracteres,18720,63.1,8.5,28.4
+todos os atributos gold,Gold,completa,18720,63.1,20.1,16.8
+atributos mapeados ao TAIL,AI-PAVE-Br (pred_llm),512 caracteres,6937,74.9,7.4,17.7
+atributos mapeados ao TAIL,AI-PAVE-Br (pred_llm),completa,6937,74.9,19.2,5.9
+atributos mapeados ao TAIL,Baseline empresa terceira (pred_ol),512 caracteres,4419,72.0,4.1,23.9
+atributos mapeados ao TAIL,Baseline empresa terceira (pred_ol),completa,4419,72.0,9.8,18.2
+atributos mapeados ao TAIL,Gold,512 caracteres,8731,60.7,6.1,33.2
+atributos mapeados ao TAIL,Gold,completa,8731,60.7,14.4,24.9

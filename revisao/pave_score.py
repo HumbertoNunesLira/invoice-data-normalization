@@ -32,6 +32,9 @@ import sys
 import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).resolve().parent))
+from pave_dataset import categoria_real  # noqa: E402
 
 PAVE = Path(__file__).resolve().parent / "pave"
 csv.field_size_limit(10 ** 7)
@@ -232,7 +235,7 @@ def main() -> None:
     # ── T6: por categoria ─────────────────────────────────────
     por_cat = defaultdict(list)
     for r in aval:
-        por_cat[r["categoria"]].append(r)
+        por_cat[categoria_real(r["categoria"])].append(r)   # rótulo corrigido (ver pave_dataset.CATEGORIA_REAL)
     cat_rows = []
     for cat in sorted(por_cat):
         sub = por_cat[cat]

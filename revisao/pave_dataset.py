@@ -23,6 +23,28 @@ import pandas as pd
 META_ANOT = {"analista", "data", "revisor", "observacao", "observacoes", "status"}
 META_COLS = {"id", "product_type", "extracted_attributes"}
 
+# Na versão do repositório AI-PAVE-Br baixada para esta avaliação (21 arquivos), o
+# nome de cada arquivo está deslocado uma posição em relação ao conteúdo: cada
+# arquivo traz a categoria anterior em ordem alfabética (Armário.csv contém
+# ares-condicionados, Bicicleta.csv contém armários, ..., Tênis.csv contém TVs).
+# Conferido pelos títulos e pelos atributos gold de cada arquivo. As 21 categorias
+# reais são Ar Condicionado ... TV; Tênis não está na versão baixada.
+# Só os RÓTULOS de categoria (T2, T6) usam este mapa: item_uid continua usando o
+# nome do arquivo, porque as predições do TAIL (tail_pred.jsonl) estão indexadas por ele.
+CATEGORIA_REAL = {
+    "Armário": "Ar Condicionado", "Bicicleta": "Armário", "Cadeira": "Bicicleta",
+    "Caixa de Som": "Cadeira", "Cama": "Caixa de Som", "Camiseta": "Cama", "Celular": "Camiseta",
+    "Conjunto de Mesa e Cadeira": "Celular", "Desktop": "Conjunto de Mesa e Cadeira", "Fogão": "Desktop",
+    "Freezer ": "Fogão", "Freezer": "Fogão", "Frigideira": "Freezer", "Guarda-Roupa": "Frigideira",
+    "Lavadora de Roupas": "Guarda-Roupa", "Microondas": "Lavadora de Roupas", "Notebook": "Microondas",
+    "Pneu": "Notebook", "Refrigerador": "Pneu", "Sofá": "Refrigerador", "TV": "Sofá", "Tênis": "TV",
+}
+
+
+def categoria_real(nome_arquivo: str) -> str:
+    """Categoria de fato contida no arquivo (ver CATEGORIA_REAL)."""
+    return CATEGORIA_REAL.get(nome_arquivo, CATEGORIA_REAL.get(nome_arquivo.strip(), nome_arquivo))
+
 
 def build(pave_dir: str) -> tuple[list[dict], list[dict]]:
     longo: list[dict] = []

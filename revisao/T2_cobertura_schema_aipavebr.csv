@@ -20,4 +20,3 @@ Pneu,382,7,2,4,5,True,aro;altura_do_pneu;largura_do_pneu;tipo_de_veículo;tipo
 Refrigerador,368,8,7,8,1,False,tipo_de_degelo
 Sofá,382,8,3,6,5,True,tipo;estilo;revestimento;tipo_de_assento;tipo_de_encosto
 TV,365,8,1,2,7,True,conectividade;polegadas;resolucao;tecnologia;sistema_operacional;assistente_virtual;tipo_de_tela
-Tênis,384,8,4,4,4,True,tamanho;Altura do Cano;genero;classificacao
