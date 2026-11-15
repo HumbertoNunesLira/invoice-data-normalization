@@ -93,3 +93,7 @@ output/
 
 # AI-PAVE-Br dataset (CC BY-NC-SA 4.0, terceiros — não versionar)
 /Dataset_in_CSVs/
+
+# Grupo 2: CSVs de pares regenerados pelo notebook a partir dos .jsonl, e logs de execução
+main_supersaurus/dados/grupo2/logs/
+main_supersaurus/dados/grupo2/pairs_normalized_*.csv
