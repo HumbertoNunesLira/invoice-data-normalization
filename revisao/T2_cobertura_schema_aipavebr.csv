@@ -1,0 +1,23 @@
+categoria,n_itens,n_slots_gold,n_mapeados_estrito,n_mapeados_frouxo,n_nao_mapeados,tem_product_type,gold_sem_correspondente
+Ar Condicionado,374,6,3,4,3,True,ciclo;tecnologia;tipo
+Armário,382,7,5,7,2,True,tipo;tipo_de_porta
+Bicicleta,382,13,2,5,11,True,aro;tamanho_do_quadro;numero_de_marchas;tipo_de_suspensao;peso_suportado;tipo_de_freio;material_do_quadro;tema;genero;tipo;potencia_do_motor
+Cadeira,384,7,4,5,3,True,tipo_de_pe;revestimento;peso_suportado
+Caixa de Som,382,8,2,3,6,True,conectividade;potencia;tipo;tamanho_do_woofer;conexoes;funcionamento da caixa
+Cama,383,12,3,4,9,True,tamanho;peso_suportado;estilo;densidade;proteção;tipo_de_colchao;altura_total;altura_do_colchao;nivel_de_conforto
+Camiseta,390,11,4,4,7,True,tamanho;estilo_da_peca;gola;manga;producao;genero;tema
+Celular,380,8,2,2,6,True,tamanho_da_tela;rede móvel;memoria_ram;armazenamento_interno;resolucao_da_camera_frontal;resolucao_da_camera_traseira
+Conjunto de Mesa e Cadeira,382,7,5,5,2,True,formato;tamanho_do_tampo
+Desktop,382,10,3,3,7,True,processador;memoria_ram;tamanho_da_tela;resolucao_da_tela;sistema_operacional;versao_do_sistema_operacional;memoria_da_placa_de_video
+Fogão,372,9,4,7,5,True,instalacao;tipo_de_acendimento;alimentacao;tipo_de_gas;tipo_de_forno
+Freezer,348,7,5,6,2,True,formato;tipo_de_degelo
+Frigideira,381,6,4,4,2,True,diametro;revestimento_interno
+Guarda-Roupa,383,9,5,7,4,False,tamanho;tipo;estilo;tipo_de_porta
+Lavadora de Roupas,352,4,4,4,0,True,
+Microondas,366,7,4,4,3,True,niveis_de_potencia;Painel;Instalação
+Notebook,371,9,4,4,5,True,memoria_ram;processador;sistema_operacional;tamanho_da_tela;resolucao_da_tela
+Pneu,382,7,2,4,5,True,aro;altura_do_pneu;largura_do_pneu;tipo_de_veículo;tipo
+Refrigerador,368,8,7,8,1,False,tipo_de_degelo
+Sofá,382,8,3,6,5,True,tipo;estilo;revestimento;tipo_de_assento;tipo_de_encosto
+TV,365,8,1,2,7,True,conectividade;polegadas;resolucao;tecnologia;sistema_operacional;assistente_virtual;tipo_de_tela
+Tênis,384,8,4,4,4,True,tamanho;Altura do Cano;genero;classificacao

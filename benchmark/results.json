@@ -1,0 +1,56 @@
+{
+  "metrics": {
+    "mean_constancy": 0.4666666666666666,
+    "min_constancy": 0.16666666666666666,
+    "max_constancy": 1.0,
+    "num_originals": 10,
+    "total_rows": 60,
+    "weighted_constancy": 0.4666666666666667
+  },
+  "best_grouping": {
+    "original": "Toalha Picnic Pic Nic Xadrez Oxford 1,50x3,00 Cores Diversas",
+    "constancy": 1.0,
+    "dominant_normalized": "Toalha Xadrez",
+    "dominant_count": 6,
+    "group_size": 6,
+    "normalized_histogram": [
+      {
+        "normalized": "Toalha Xadrez",
+        "count": 6
+      }
+    ]
+  },
+  "worst_grouping": {
+    "original": "Bocallave Hexagonal Impacto 1/2  - 7/8",
+    "constancy": 0.16666666666666666,
+    "dominant_normalized": "Bocal Hexagonal Impacto 1/2 - 7/8",
+    "dominant_count": 1,
+    "group_size": 6,
+    "normalized_histogram": [
+      {
+        "normalized": "Bocal Hexagonal Impacto 1/2 - 7/8",
+        "count": 1
+      },
+      {
+        "normalized": "Ferramentas Bocallave Hex. Impacto 1/2 - 7/8",
+        "count": 1
+      },
+      {
+        "normalized": "Ferramentas Bocallave Hexagonal",
+        "count": 1
+      },
+      {
+        "normalized": "Ferramentas Bocallave Hexagonal Impacto 0,5 pol - 0,875 pol",
+        "count": 1
+      },
+      {
+        "normalized": "Ferramentas Bocallave Hexagonal Impacto 1/2 - 7/88",
+        "count": 1
+      },
+      {
+        "normalized": "Ferramentas Bocallave Hexagonal Impacto 12,7mm - 22,2mm",
+        "count": 1
+      }
+    ]
+  }
+}

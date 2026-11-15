@@ -1,0 +1,14 @@
+dimensao,AI-PAVE-Br [Gazzola et al. 2025],TAIL (este trabalho)
+Tarefa,Product Attribute Value Extraction (PAVE): extrair valores de atributo de uma descricao,Entity matching: decidir se dois titulos designam o mesmo produto
+Unidade de avaliacao,"Um par (item, atributo) — 179 slots de atributo gold",Um par de titulos — 1.200 pares anotados
+Saida avaliada,Conjunto de valores por atributo,"Chave canonica unica por titulo, comparada par a par"
+Entrada do sistema,"Golden Set publicado traz title + description (description em 7.784/7.890 itens, 21 categorias na versao baixada); 12,8% dos valores numericos extraidos so ocorrem na description, o que indica seu uso; entrada exata nao documentada",Apenas o titulo (Sec. 3.1: unica coluna consistentemente preenchida no MeLi)
+Proveniencia dos dados,"Catalogo de marketplace, 22 categorias curadas","Dump MeLi, ~20 mi de titulos PT/ES, pool de 30.000 amostrado (seed 42)"
+Amostragem,~385 itens por categoria (Cochran),300 pares aleatorios + 900 estratificados por similaridade textual
+Schema,"Por categoria: 179 slots gold, 8,1 atributos/categoria em media","Cross-categoria fixo: 9 campos, identicos em todo o catalogo"
+Sobreposicao de schema,-,"80/179 slots (44,7%) tem correspondente estrito no TAIL; 68 atributos gold distintos nao tem"
+Campos do TAIL sem gold correspondente,-,modelo (0/22 categorias) e outros_atributos (0/22) — modelo e um dos 5 campos da match key
+Metrica,P/R/F1 set-based token-level por atributo + Coverage,P/R/F1 par-a-par (exact e weighted com blocking) + constancia por grupo
+Modelos avaliados,1 LLM (Gemini 1.5 Flash) + 1 baseline tradicional,"3 LLMs (Gemini 3.1 Flash-Lite, GPT-5.4-mini, DeepSeek V4 Flash)"
+Resultado principal reportado,"F1 0,7468 / Coverage 71,96% vs baseline 0,5979 / 46,71%","F1 0,429–0,679 conforme o modelo de extracao (25,0 pp de amplitude)"
+Licenca dos dados,CC BY-NC-SA 4.0,"Dump proprietario, nao redistribuivel"

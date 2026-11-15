@@ -1,0 +1,56 @@
+{
+  "metrics": {
+    "mean_constancy": 0.6171428571428571,
+    "min_constancy": 0.16666666666666666,
+    "max_constancy": 1.0,
+    "num_originals": 100,
+    "total_rows": 601,
+    "weighted_constancy": 0.6173044925124792
+  },
+  "best_grouping": {
+    "original": "6 MASCARA RECONSTRUCO EFEITO TEIA 1KG ANJORE ATACADO",
+    "constancy": 1.0,
+    "dominant_normalized": "MÁSCARA ANJORE RECONSTRUÇÃO EFEITO TEIA - 6 METROS",
+    "dominant_count": 6,
+    "group_size": 6,
+    "normalized_histogram": [
+      {
+        "normalized": "MÁSCARA ANJORE RECONSTRUÇÃO EFEITO TEIA - 6 METROS",
+        "count": 6
+      }
+    ]
+  },
+  "worst_grouping": {
+    "original": "SHAMPOO ENGROSSADOR ANTIQUEDA TIO NACHO 415ML KIT C3UN",
+    "constancy": 0.16666666666666666,
+    "dominant_normalized": "SHAMPOO TIO NACHO ENGROSSADOR ANTIQUEDA - 0.415 LITROS, 3 UNIDADES",
+    "dominant_count": 1,
+    "group_size": 6,
+    "normalized_histogram": [
+      {
+        "normalized": "SHAMPOO TIO NACHO ENGROSSADOR ANTIQUEDA - 0.415 LITROS, 3 UNIDADES",
+        "count": 1
+      },
+      {
+        "normalized": "SHAMPOO TIO NACHO ENGROSSADOR ANTIQUEDA - 415 LITROS, 3 UNIDADES",
+        "count": 1
+      },
+      {
+        "normalized": "SHAMPOO TIO NACHO ENGROSSADOR ANTIQUEDA - 415 METROS, 3 UNIDADES",
+        "count": 1
+      },
+      {
+        "normalized": "SHAMPOO TIO NACHO ENGROSSADOR ANTIQUEDA - 415 MILILITROS, 3 UNIDADES",
+        "count": 1
+      },
+      {
+        "normalized": "SHAMPOO TIO NACHO ENGROSSADOR ANTIQUEDA - 451 MILILITROS, 3 UNIDADES",
+        "count": 1
+      },
+      {
+        "normalized": "TIO NACHO SHAMPOO ENGROSSADOR ANTIQUEDA - 415 MILILITROS",
+        "count": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+escopo,metrica,sistema,precision,recall,f1,coverage,n_avaliados,tp,fp,fn
+todos os atributos mapeados,literal,AI-PAVE-Br (Gemini 1.5 Flash),0.7821,0.5498,0.6457,0.7644,23765,16751,4666,13714
+todos os atributos mapeados,literal,Baseline empresa terceira,0.8613,0.4562,0.5965,0.5857,23765,13899,2239,16566
+todos os atributos mapeados,literal,TAIL (Gemini 3.1 Flash-Lite),0.7432,0.4074,0.5262,0.574,23765,12410,4289,18055
+todos os atributos mapeados,equiv. de unidade,AI-PAVE-Br (Gemini 1.5 Flash),0.7821,0.5498,0.6457,0.7644,23765,16751,4666,13714
+todos os atributos mapeados,equiv. de unidade,Baseline empresa terceira,0.8613,0.4562,0.5965,0.5857,23765,13899,2239,16566
+todos os atributos mapeados,equiv. de unidade,TAIL (Gemini 3.1 Flash-Lite),0.7991,0.438,0.5659,0.574,23765,13345,3354,17120
+schema alinhado,literal,AI-PAVE-Br (Gemini 1.5 Flash),0.7779,0.602,0.6788,0.7765,18677,13418,3830,8871
+schema alinhado,literal,Baseline empresa terceira,0.8511,0.5289,0.6524,0.6677,18677,11789,2062,10500
+schema alinhado,literal,TAIL (Gemini 3.1 Flash-Lite),0.7792,0.4955,0.6058,0.6512,18677,11044,3129,11245
+schema alinhado,equiv. de unidade,AI-PAVE-Br (Gemini 1.5 Flash),0.7779,0.602,0.6788,0.7765,18677,13418,3830,8871
+schema alinhado,equiv. de unidade,Baseline empresa terceira,0.8511,0.5289,0.6524,0.6677,18677,11789,2062,10500
+schema alinhado,equiv. de unidade,TAIL (Gemini 3.1 Flash-Lite),0.8452,0.5374,0.6571,0.6512,18677,11979,2194,10310

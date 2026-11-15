@@ -1,0 +1,5 @@
+metodo_a,metodo_b,f1_a,f1_b,delta_f1_pp,ci95_lo_pp,ci95_hi_pp,bootstrap_significativo,mcnemar_so_a_acerta,mcnemar_so_b_acerta,mcnemar_p,mcnemar_significativo,n_pares,n_positivos,n_clusters
+Gemini 3.1 Flash-Lite (Weighted),GPT-5.4-mini (Weighted),0.7843,0.4483,33.6,16.8,52.4,True,23,2,1.9e-05,True,1200,30,1196
+Gemini 3.1 Flash-Lite (Weighted),DeepSeek V4 Flash (Weighted),0.7843,0.4444,34.0,21.1,48.5,True,30,1,0.0,True,1200,30,1196
+Gemini 3.1 Flash-Lite (Weighted),TF-IDF palavra,0.7843,0.597,18.7,1.1,37.3,True,22,6,0.003719,True,1200,30,1196
+Gemini 3.1 Flash-Lite (Weighted),TF-IDF caractere,0.7843,0.5672,21.7,5.3,39.4,True,23,5,0.000912,True,1200,30,1196

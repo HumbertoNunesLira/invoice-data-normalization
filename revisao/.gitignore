@@ -1,0 +1,4 @@
+__pycache__/
+pave/*.csv
+pave/*.jsonl
+pave/*.log
