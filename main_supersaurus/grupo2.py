@@ -546,6 +546,22 @@ def predicoes_comparacao_direta(modelo: str, execucao: int = 1,
     return pred, resumo
 
 
+def pares_sem_resposta_direta(modelo: str, execucao: int = 1, df: pd.DataFrame | None = None) -> np.ndarray:
+    """Máscara booleana: True nos pares da comparação direta sem resposta válida
+    (lote ausente, bloqueado, fora do formato ou 'mesmo_produto' não interpretável)."""
+    df = load_pairs() if df is None else df
+    regs = carrega_cache(cache_direta(modelo, execucao))
+    n = len(df)
+    sem = np.zeros(n, bool)
+    for ini in range(0, n, BATCH_SIZE):
+        k = min(BATCH_SIZE, n - ini)
+        r = regs.get(ini)
+        lista = parse_resposta(modelo, r["texto"]) if r and r.get("texto") else []
+        for local, j in enumerate(_casa_por_idx(lista, ini, k)):
+            sem[ini + local] = (_bool(j.get("mesmo_produto")) if j else None) is None
+    return sem
+
+
 # ═══════════════════════════════════════════════════════════════════
 #  13 — Embeddings (local)
 # ═══════════════════════════════════════════════════════════════════
